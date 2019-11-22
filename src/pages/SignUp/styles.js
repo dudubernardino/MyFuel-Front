@@ -1,5 +1,15 @@
 import styled, { keyframes } from 'styled-components';
 
+const rotate = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+  
+  to {
+    transform: rotate(360deg);
+  }
+`;
+
 const move = keyframes`
   from {
     opacity: 0;
@@ -44,5 +54,11 @@ export const Container = styled.div`
     animation: ${move} 800ms;
     animation-delay: 600ms;
     animation-fill-mode: backwards;
+  }
+`;
+
+export const Loading = styled.div`
+  svg {
+    animation: ${rotate} 2s linear infinite;
   }
 `;
