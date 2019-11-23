@@ -17,3 +17,22 @@ export function updateProfileFailure() {
     type: '@user/UPDATE_PROFILE_REQUEST',
   };
 }
+
+export function getProfilesRequest() {
+  return {
+    type: '@user/GET_PROFILES_REQUEST',
+  };
+}
+
+export function getProfilesSuccess(profiles) {
+  return {
+    type: '@user/GET_PROFILES_SUCCESS',
+    payload: { profiles },
+  };
+}
+
+export function getProfilesFailure() {
+  return {
+    type: '@user/GET_PROFILES_FAILURE',
+  };
+}

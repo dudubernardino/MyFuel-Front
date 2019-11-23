@@ -3,7 +3,12 @@ import { toast } from 'react-toastify';
 
 import api from '~/services/api';
 
-import { updateProfileSuccess, updateProfileFailure } from './actions';
+import {
+  updateProfileSuccess,
+  updateProfileFailure,
+  getProfilesSuccess,
+  getProfilesFailure,
+} from './actions';
 
 export function* updateProfile({ payload }) {
   try {
@@ -29,4 +34,19 @@ export function* updateProfile({ payload }) {
   }
 }
 
-export default all([takeLatest('@user/UPDATE_PROFILE_REQUEST', updateProfile)]);
+export function* getProfiles() {
+  try {
+    const response = yield call(api.get, 'users');
+
+    yield put(getProfilesSuccess(response.data));
+  } catch (err) {
+    yield put(getProfilesFailure());
+
+    toast.error('Erro ao carregar os usuários');
+  }
+}
+
+export default all([
+  takeLatest('@user/UPDATE_PROFILE_REQUEST', updateProfile),
+  takeLatest('@user/GET_PROFILES_REQUEST', getProfiles),
+]);
