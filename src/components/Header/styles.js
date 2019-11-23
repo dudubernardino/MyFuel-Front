@@ -50,7 +50,7 @@ export const Profile = styled.div`
 
     strong {
       display: block;
-      color: #333;
+      color: #038ccf;
     }
 
     a {
