@@ -49,6 +49,7 @@ export default function Dashboard() {
                 <FaMoneyBillAlt size={20} color="#000" />
 
                 <span>
+                  R${' '}
                   {profile.fuels.reduce(
                     (acc, item) => acc + item.total_price,
                     0
@@ -79,31 +80,6 @@ export default function Dashboard() {
               </div>
             </Fuel>
           ) : null}
-
-          {/* {profile.fuels
-            ? profile.fuels.reduce(
-                (acc, item) => (
-                  <Fuel key={item.id}>
-                    <div className="content">
-                      <FaMoneyBillAlt size={20} color="#000" />
-
-                      <span>{acc + item.total_price}</span>
-                    </div>
-                    <div className="content">
-                      <MdLocalGasStation size={20} color="#000" />
-
-                      <span>{acc + item.liters_of_gasoline}</span>
-                    </div>
-                    <div className="content">
-                      <FaWineBottle size={20} color="#000" />
-
-                      <span>{acc + item.liter_of_alcohol}</span>
-                    </div>
-                  </Fuel>
-                ),
-                0
-              )
-            : null} */}
         </Card>
       ))}
     </Container>

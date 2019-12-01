@@ -23,7 +23,7 @@ This app features all the latest tools and practices in web development!
 
 ## Getting started
 
-_Before you run this application you need to make sure the [server](https://github.com/dudubernardino/GoBarber/tree/master/gbapi) is running!_.
+_Before you run this application you need to make sure the [server](https://github.com/dudubernardino/MyFuel-Api) is running!_.
 
 1. Clone this repo using `https://github.com/dudubernardino/MyFuel-Front`
 2. Run `yarn` to install dependencies.<br />
